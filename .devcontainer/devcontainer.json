@@ -1,0 +1,60 @@
+{
+	"name": "Anaconda (Python 3) & PostgreSQL",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"features": {
+		"ghcr.io/devcontainers/features/github-cli": {
+			"version": "latest",
+			"installDirectlyFromGitHubRelease": "true"
+		},
+		"ghcr.io/devcontainers/features/desktop-lite": {
+			"version": "latest",
+			"noVncVersion": "1.2.0",
+			"password": "vscode",
+			"webPort": "6080",
+			"vncPort": "5901"
+		},
+		"ghcr.io/devcontainers/features/python": {
+			"version": "latest",
+			"installTools": "true",
+			"toolsToInstall": "flake8,autopep8,black,yapf,mypy,pydocstyle,pycodestyle,bandit,pipenv,virtualenv,pytest,pylint",
+			"optimize": "true",
+			"enableShared": "true",
+			"installPath": "/usr/local/python",
+			"installJupyterlab": "true",
+			"configureJupyterlabAllowOrigin": "",
+			"httpProxy": ""
+		},
+		"ghcr.io/devcontainers/features/common-utils": {
+			"installZsh": "true",
+			"configureZshAsDefaultShell": "false",
+			"installOhMyZsh": "true",
+			"installOhMyZshConfig": "true",
+			"upgradePackages": "true",
+			"username": "automatic",
+			"userUid": "automatic",
+			"userGid": "automatic",
+			"nonFreePackages": "false"
+		},
+		"ghcr.io/devcontainers/features/git-lfs": {
+			"version": "latest",
+			"autoPull": "true",
+			"installDirectlyFromGitHubRelease": "false"
+		},
+		"ghcr.io/devcontainers/features/nix": {
+			"version": "latest",
+			"multiUser": "true",
+			"packages": "",
+			"useAttributePath": "false",
+			"flakeUri": "",
+			"extraNixConfig": ""
+		}
+  },
+  "tasks": {
+    "build": "pip install -r requirements.txt && mkdir deep_tree_echo_profile && cp .env.template .env"
+  },
+  "postCreateCommand": "pip install -r requirements.txt",
+  "forwardPorts": [5432],
+  "postStartCommand": "python launch_deep_tree_echo.py"
+}
