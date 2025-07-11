@@ -16,10 +16,8 @@ import time
 import logging
 from typing import Dict, List, Any
 
-# Mock numpy for testing
+# Simple mock for testing when dependencies are missing
 import sys
-sys.path.insert(0, '/tmp')
-import numpy_mock as np
 
 # Import our modules
 from distributed_cognitive_grammar import (
