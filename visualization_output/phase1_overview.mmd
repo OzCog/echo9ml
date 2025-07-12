@@ -1,0 +1,27 @@
+
+graph TD
+    A[Ko6ml Primitives] --> B[AtomSpace Translator]
+    B --> C[Hypergraph Fragments]
+    C --> D[Tensor Architecture]
+    D --> E[Distributed Operations]
+    
+    F[Agent State] --> A
+    G[Memory Fragments] --> A
+    H[Reasoning Patterns] --> A
+    I[Attention Allocation] --> A
+    J[Persona Traits] --> A
+    
+    C --> K[ConceptNode]
+    C --> L[PredicateNode] 
+    C --> M[InheritanceLink]
+    C --> N[EvaluationLink]
+    
+    D --> O[Persona Tensor<br/>(3,7,13,5,2)]
+    D --> P[Memory Tensor<br/>(101,8,5,7,3)]
+    D --> Q[Attention Tensor<br/>(17,17,11,7,2)]
+    
+    style A fill:#4CAF50
+    style B fill:#2196F3
+    style C fill:#FF9800
+    style D fill:#9C27B0
+    style E fill:#F44336
