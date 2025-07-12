@@ -27,7 +27,7 @@ on:
         default: true
         type: boolean
   schedule:
-    - cron: '0 6 * * 1'  # Weekly on Monday at 6 AM UTC
+    - cron: '0 6 * * 1'
   push:
     branches: [ "main" ]
     paths:
@@ -63,7 +63,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install requests python-dotenv psutil pyyaml
-          # Install minimal dependencies for the cognitive system
           pip install --no-deps --timeout=30 numpy || echo "Numpy install failed, using fallback"
 
       - name: Initialize Cognitive Architecture
@@ -116,7 +115,6 @@ jobs:
       - name: Trigger Dependent Workflows
         if: success()
         run: |
-          # Trigger other cognitive workflows if integration is successful
           curl -X POST \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
@@ -150,10 +148,6 @@ jobs:
           sys.path.append('.')
           
           try:
-              # Test basic imports without heavy dependencies
-              print('Testing cognitive imports...')
-              
-              # Test file existence
               required_files = [
                   'distributed_cognitive_grammar.py',
                   'cognitive_architecture.py', 
