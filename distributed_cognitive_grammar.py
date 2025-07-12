@@ -29,9 +29,12 @@ try:
     from swarmprotocol import MessageBroker, RLAgent
     from memory_management import HypergraphMemory, MemoryNode, MemoryType
     from echoself_introspection import AdaptiveAttentionAllocator
+    from ecan_attention_allocator import ECANAttentionAllocator, ResourceType, TaskPriority
     IMPORTS_AVAILABLE = True
+    ECAN_AVAILABLE = True
 except ImportError:
     IMPORTS_AVAILABLE = False
+    ECAN_AVAILABLE = False
     logging.warning("Some imports not available, using mock implementations")
 
 # Configure logging
@@ -110,7 +113,16 @@ class DistributedCognitiveAgent:
         self.inbox = None
         self.hypergraph_memory = HypergraphMemory() if IMPORTS_AVAILABLE else None
         self.tensor_shapes: Dict[str, TensorShape] = {}
-        self.attention_allocator = AdaptiveAttentionAllocator() if IMPORTS_AVAILABLE else None
+        
+        # Enhanced ECAN Attention Allocation
+        if ECAN_AVAILABLE:
+            self.ecan_allocator = ECANAttentionAllocator(agent_id, initial_av=1000.0)
+            self.attention_allocator = None
+            self.logger.info(f"Initialized ECAN attention allocator for {agent_id}")
+        else:
+            self.attention_allocator = AdaptiveAttentionAllocator() if IMPORTS_AVAILABLE else None
+            self.ecan_allocator = None
+            
         self.running = False
         self.last_heartbeat = time.time()
         self.peers: Set[str] = set()
@@ -256,11 +268,31 @@ class DistributedCognitiveAgent:
         logger.info(f"Updated tensor {tensor_type} from {message.sender_id}")
     
     async def _handle_attention_allocation(self, message: CognitiveMessage):
-        """Handle attention allocation message"""
+        """Handle attention allocation message with ECAN support"""
         allocation_data = message.payload.get("allocation", {})
         
-        if self.attention_allocator:
-            # Update attention based on external allocation
+        if self.ecan_allocator:
+            # ECAN-based attention handling
+            if "attention_atoms" in allocation_data:
+                # Process shared attention atoms
+                for atom_data in allocation_data["attention_atoms"]:
+                    self.ecan_allocator.create_attention_atom(
+                        content=atom_data.get("content", f"shared_from_{message.sender_id}"),
+                        initial_sti=atom_data.get("sti", 0.3),
+                        initial_av=atom_data.get("av", 5.0)
+                    )
+                    
+            if "resource_bids" in allocation_data:
+                # Process resource sharing requests
+                for bid_data in allocation_data["resource_bids"]:
+                    # Consider external bids for resource trading
+                    logger.info(f"Received resource bid from {message.sender_id}: {bid_data}")
+                    
+            # Run an ECAN attention cycle to process new information
+            await self.ecan_allocator.run_attention_cycle()
+            
+        elif self.attention_allocator:
+            # Fallback to basic attention allocation
             current_load = allocation_data.get("load", 0.5)
             recent_activity = allocation_data.get("activity", 0.5)
             
@@ -269,6 +301,8 @@ class DistributedCognitiveAgent:
             )
             
             logger.info(f"Updated attention threshold to {threshold:.3f}")
+        
+        logger.debug(f"Processed attention allocation from {message.sender_id}")
     
     async def _handle_reasoning_query(self, message: CognitiveMessage):
         """Handle reasoning query"""
@@ -355,8 +389,81 @@ class DistributedCognitiveAgent:
                 await asyncio.sleep(1)
     
     async def _process_cognitive_state(self):
-        """Process cognitive state - to be overridden by subclasses"""
-        pass
+        """Process cognitive state with ECAN support"""
+        if self.ecan_allocator:
+            # Run ECAN attention cycle
+            cycle_result = await self.ecan_allocator.run_attention_cycle()
+            
+            # Share high-attention atoms with other agents occasionally
+            if cycle_result["attention_spreads"] > 0 and len(self.peers) > 0:
+                await self._share_attention_atoms()
+                
+            # Share resource availability if needed
+            if cycle_result["allocations_processed"] > 0:
+                await self._share_resource_status()
+    
+    async def _share_attention_atoms(self):
+        """Share high-attention atoms with other agents"""
+        if not self.ecan_allocator or not self.peers:
+            return
+            
+        # Find high-attention atoms to share
+        high_attention_atoms = [
+            {
+                "atom_id": atom.atom_id,
+                "content": str(atom.content),
+                "sti": atom.sti,
+                "av": atom.av,
+                "age": atom.age
+            }
+            for atom in self.ecan_allocator.attention_atoms.values()
+            if atom.sti > 0.5  # Only share high-attention atoms
+        ]
+        
+        if high_attention_atoms:
+            attention_message = CognitiveMessage(
+                message_id=str(uuid.uuid4()),
+                message_type=MessageType.ATTENTION_ALLOCATION,
+                sender_id=self.agent_id,
+                payload={
+                    "allocation": {
+                        "attention_atoms": high_attention_atoms,
+                        "timestamp": time.time(),
+                        "sharing_reason": "high_attention_spread"
+                    }
+                }
+            )
+            
+            await self._send_message(attention_message)
+            logger.debug(f"Shared {len(high_attention_atoms)} attention atoms with network")
+    
+    async def _share_resource_status(self):
+        """Share resource availability status with other agents"""
+        if not self.ecan_allocator or not self.peers:
+            return
+            
+        metrics = self.ecan_allocator.get_performance_metrics()
+        
+        resource_message = CognitiveMessage(
+            message_id=str(uuid.uuid4()),
+            message_type=MessageType.ATTENTION_ALLOCATION,
+            sender_id=self.agent_id,
+            payload={
+                "allocation": {
+                    "resource_utilization": metrics["resource_utilization"],
+                    "available_av": metrics["current_av"],
+                    "performance_metrics": {
+                        "task_completion_rate": metrics["total_tasks_completed"],
+                        "av_efficiency": metrics["av_efficiency"],
+                        "resource_efficiency": metrics["resource_efficiency"]
+                    },
+                    "timestamp": time.time()
+                }
+            }
+        )
+        
+        await self._send_message(resource_message)
+        logger.debug("Shared resource status with network")
     
     async def _send_message(self, message: CognitiveMessage):
         """Send message to other agents"""
