@@ -1,0 +1,5 @@
+{
+  "agent_network": "echo9ml_reservoir",
+  "hypergraph_encoding": "enabled",
+  "attention_allocation": "ECAN_style"
+}
