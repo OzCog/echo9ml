@@ -1,0 +1,390 @@
+{
+  "cycles": [],
+  "agents": {
+    "TestAgent": {
+      "history": [
+        {
+          "timestamp": "2025-07-12T15:26:56.204702",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:26:56.249212",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:26:56.250136",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:26:56.250989",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:26:56.251980",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:26:56.252856",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:26:56.253765",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:26:56.255122",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:26:56.256052",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:01.255969",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:01.257636",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:01.259075",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:01.259987",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:01.260921",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:01.261857",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:01.262958",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:01.264443",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:01.266171",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:01.267434",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:26.461248",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:26.462871",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:26.464345",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:26.465282",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:26.466221",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:26.467180",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:26.468312",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:26.469767",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:26.471468",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:26.472747",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:46.377035",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:46.378866",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:46.380534",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:46.381603",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:46.382665",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:46.383701",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:46.384922",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:46.386422",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:46.388307",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:28:46.389825",
+          "domain": "Testing",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        }
+      ],
+      "created_at": "2025-07-12T15:26:56.204696",
+      "domain": "Testing",
+      "state": 0.5,
+      "poll_interval": 1.0,
+      "error_threshold": 0.1
+    },
+    "MetaCognitive": {
+      "history": [
+        {
+          "timestamp": "2025-07-12T15:30:02.555167",
+          "domain": "Meta-Cognitive Processing",
+          "state": 0.7,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:30:55.839427",
+          "domain": "Meta-Cognitive Processing",
+          "state": 0.5492806044370949,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        }
+      ],
+      "created_at": "2025-07-12T15:30:02.555157",
+      "domain": "Meta-Cognitive Processing",
+      "state": 0.5492806044370949,
+      "poll_interval": 1.0,
+      "error_threshold": 0.1
+    },
+    "SelfAnalysis": {
+      "history": [
+        {
+          "timestamp": "2025-07-12T15:30:02.555751",
+          "domain": "Self-Analysis Operations",
+          "state": 0.6,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:30:55.840302",
+          "domain": "Self-Analysis Operations",
+          "state": 0.8202660234524368,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        }
+      ],
+      "created_at": "2025-07-12T15:30:02.555744",
+      "domain": "Self-Analysis Operations",
+      "state": 0.8202660234524368,
+      "poll_interval": 1.0,
+      "error_threshold": 0.1
+    },
+    "AdaptiveOpt": {
+      "history": [
+        {
+          "timestamp": "2025-07-12T15:30:02.556260",
+          "domain": "Adaptive Optimization",
+          "state": 0.8,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        },
+        {
+          "timestamp": "2025-07-12T15:30:55.841374",
+          "domain": "Adaptive Optimization",
+          "state": 0.7998922747739737,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        }
+      ],
+      "created_at": "2025-07-12T15:30:02.556254",
+      "domain": "Adaptive Optimization",
+      "state": 0.7998922747739737,
+      "poll_interval": 1.0,
+      "error_threshold": 0.1
+    },
+    "RecursiveMonitor": {
+      "history": [
+        {
+          "timestamp": "2025-07-12T15:30:02.556802",
+          "domain": "Recursive Monitoring",
+          "state": 0.5,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        }
+      ],
+      "created_at": "2025-07-12T15:30:02.556796",
+      "domain": "Recursive Monitoring",
+      "state": 0.5,
+      "poll_interval": 1.0,
+      "error_threshold": 0.1
+    },
+    "PatternDetector": {
+      "history": [
+        {
+          "timestamp": "2025-07-12T15:30:02.557310",
+          "domain": "Pattern Detection",
+          "state": 0.9,
+          "poll_interval": 1.0,
+          "error_threshold": 0.1
+        }
+      ],
+      "created_at": "2025-07-12T15:30:02.557304",
+      "domain": "Pattern Detection",
+      "state": 0.9,
+      "poll_interval": 1.0,
+      "error_threshold": 0.1
+    }
+  },
+  "system_metrics": [],
+  "last_updated": "2025-07-12T15:30:55.841383"
+}
