@@ -60,3 +60,7 @@ nosetests.xml
 coverage.xml
 *.cover
 .hypothesis/
+
+# Cognitive Integration Workspace (exclude temporary files)
+cognitive_workspace/
+cognitive_logs/
