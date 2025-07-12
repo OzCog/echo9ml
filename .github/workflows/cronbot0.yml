@@ -49,6 +49,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run self-improving loop
+        env:
+          GITHUB_TOKEN: ${{ secrets.WFLO }}
         run: |
           python cronbot.py
           
