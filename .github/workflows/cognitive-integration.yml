@@ -44,7 +44,7 @@ permissions:
 
 jobs:
   cognitive-integration:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     name: Reservoir Computing Cognitive Integration
     
     steps:
@@ -123,7 +123,7 @@ jobs:
 
   validate-integration:
     needs: cognitive-integration
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     name: Validate Cognitive Integration
     
     steps:
