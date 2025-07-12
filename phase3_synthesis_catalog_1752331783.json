@@ -1,0 +1,94 @@
+{
+  "agent_id": "demo_agent",
+  "symbolic_patterns": {
+    "demo_agent_pattern_1752331777886": {
+      "pattern_id": "demo_agent_pattern_1752331777886",
+      "pattern_type": "generic",
+      "confidence": 0.85,
+      "temporal_context": "problem_solving_phase"
+    }
+  },
+  "synthesis_pathways": {
+    "demo_agent_pathway_1752331777887": {
+      "pathway_id": "demo_agent_pathway_1752331777887",
+      "pathway_type": "neural_symbolic_bridge",
+      "synthesis_strength": 0.78,
+      "timestamp": 1752331777.8871675
+    }
+  },
+  "performance_metrics": [
+    {
+      "operation_latency": 4.935264587402344e-05,
+      "memory_usage": 1024,
+      "synthesis_accuracy": 0.85,
+      "pathway_coherence": 0.8,
+      "atomspace_integration_score": 0.6,
+      "computational_efficiency": 1000.0
+    },
+    {
+      "operation_latency": 1.4066696166992188e-05,
+      "memory_usage": 1792,
+      "synthesis_accuracy": 0.82,
+      "pathway_coherence": 0.95,
+      "atomspace_integration_score": 0.75,
+      "computational_efficiency": 1000.0
+    },
+    {
+      "operation_latency": 1.3113021850585938e-05,
+      "memory_usage": 2048,
+      "synthesis_accuracy": 0.82,
+      "pathway_coherence": 0.88,
+      "atomspace_integration_score": 0.75,
+      "computational_efficiency": 1000.0
+    },
+    {
+      "operation_latency": 1.1444091796875e-05,
+      "memory_usage": 2304,
+      "synthesis_accuracy": 0.78,
+      "pathway_coherence": 0.82,
+      "atomspace_integration_score": 0.88,
+      "computational_efficiency": 1000.0
+    },
+    {
+      "operation_latency": 1.5497207641601562e-05,
+      "memory_usage": 2560,
+      "synthesis_accuracy": 0.78,
+      "pathway_coherence": 0.82,
+      "atomspace_integration_score": 0.88,
+      "computational_efficiency": 1000.0
+    },
+    {
+      "operation_latency": 7.152557373046875e-06,
+      "memory_usage": 2816,
+      "synthesis_accuracy": 0.78,
+      "pathway_coherence": 0.82,
+      "atomspace_integration_score": 0.88,
+      "computational_efficiency": 1000.0
+    },
+    {
+      "operation_latency": 8.58306884765625e-06,
+      "memory_usage": 3072,
+      "synthesis_accuracy": 0.8,
+      "pathway_coherence": 0.85,
+      "atomspace_integration_score": 0.77,
+      "computational_efficiency": 1000.0
+    },
+    {
+      "operation_latency": 1.9073486328125e-05,
+      "memory_usage": 3328,
+      "synthesis_accuracy": 0.87,
+      "pathway_coherence": 0.83,
+      "atomspace_integration_score": 0.6,
+      "computational_efficiency": 1000.0
+    },
+    {
+      "operation_latency": 8.106231689453125e-06,
+      "memory_usage": 3584,
+      "synthesis_accuracy": 0.84,
+      "pathway_coherence": 0.79,
+      "atomspace_integration_score": 0.6,
+      "computational_efficiency": 1000.0
+    }
+  ],
+  "export_timestamp": 1752331783.9330356
+}

@@ -1,0 +1,484 @@
+{
+  "benchmark_summary": {
+    "agent_id": "demo_agent",
+    "total_benchmarks": 16,
+    "benchmark_types": [
+      "operation_latency",
+      "memory_usage",
+      "throughput",
+      "tensor_coherence",
+      "neural_symbolic_bridge"
+    ],
+    "performance_summary": {
+      "operation_latency": {
+        "test_count": 2,
+        "average_execution_time": 0.001062023639678955,
+        "average_accuracy": 1.0,
+        "average_throughput": 941.5989109388863,
+        "average_error_rate": 0.0,
+        "total_memory_usage": 2098176
+      },
+      "memory_usage": {
+        "test_count": 2,
+        "average_execution_time": 7.152557373046875e-07,
+        "average_accuracy": 1.0,
+        "average_throughput": 1398101.3333333333,
+        "average_error_rate": 0.0,
+        "total_memory_usage": 81920
+      },
+      "throughput": {
+        "test_count": 2,
+        "average_execution_time": 3.0006637573242188,
+        "average_accuracy": 0.7999999999999878,
+        "average_throughput": 940.9584703047396,
+        "average_error_rate": 0.20000000000001217,
+        "total_memory_usage": 2100224
+      },
+      "tensor_coherence": {
+        "test_count": 5,
+        "average_execution_time": 1.239776611328125e-06,
+        "average_accuracy": 0.7999999999999999,
+        "average_throughput": 3502243.84,
+        "average_error_rate": 0.2000000000000001,
+        "total_memory_usage": 5253120
+      },
+      "neural_symbolic_bridge": {
+        "test_count": 5,
+        "average_execution_time": 5.245208740234375e-07,
+        "average_accuracy": 0.796,
+        "average_throughput": 2963974.8266666667,
+        "average_error_rate": 0.20399999999999996,
+        "total_memory_usage": 5259520
+      }
+    },
+    "real_data_validations": 3,
+    "tensor_signatures": 1,
+    "synthesis_engine_available": false
+  },
+  "detailed_results": [
+    {
+      "benchmark_id": "latency_persona_evolve_1752331777909",
+      "benchmark_type": "operation_latency",
+      "test_parameters": {
+        "operation_type": "persona_evolve",
+        "iterations": 20
+      },
+      "execution_time": 0.0010614395141601562,
+      "memory_usage": 1049088,
+      "accuracy_score": 1.0,
+      "throughput": 942.1168014375562,
+      "error_rate": 0.0,
+      "metadata": {
+        "min_latency": 0.0010590553283691406,
+        "max_latency": 0.001064300537109375,
+        "std_latency": 1.5373644724185117e-06,
+        "latency_distribution": [
+          0.001064300537109375,
+          0.00106048583984375,
+          0.0010595321655273438,
+          0.0010595321655273438,
+          0.0010595321655273438,
+          0.0010597705841064453,
+          0.0010592937469482422,
+          0.0010590553283691406,
+          0.0010609626770019531,
+          0.0010628700256347656,
+          0.0010623931884765625,
+          0.001062154769897461,
+          0.001062154769897461,
+          0.0010619163513183594,
+          0.001062154769897461,
+          0.0010628700256347656,
+          0.0010631084442138672,
+          0.0010623931884765625,
+          0.0010623931884765625,
+          0.0010619163513183594
+        ]
+      },
+      "timestamp": 1752331777.9092224
+    },
+    {
+      "benchmark_id": "latency_attention_spread_1752331777930",
+      "benchmark_type": "operation_latency",
+      "test_parameters": {
+        "operation_type": "attention_spread",
+        "iterations": 20
+      },
+      "execution_time": 0.0010626077651977538,
+      "memory_usage": 1049088,
+      "accuracy_score": 1.0,
+      "throughput": 941.0810204402163,
+      "error_rate": 0.0,
+      "metadata": {
+        "min_latency": 0.0010619163513183594,
+        "max_latency": 0.0010666847229003906,
+        "std_latency": 1.237409470861171e-06,
+        "latency_distribution": [
+          0.0010666847229003906,
+          0.001062631607055664,
+          0.001062154769897461,
+          0.001062154769897461,
+          0.0010619163513183594,
+          0.0010628700256347656,
+          0.001062631607055664,
+          0.001062154769897461,
+          0.0010619163513183594,
+          0.0010623931884765625,
+          0.001062154769897461,
+          0.0010654926300048828,
+          0.001062154769897461,
+          0.0010619163513183594,
+          0.001062154769897461,
+          0.001062631607055664,
+          0.0010619163513183594,
+          0.001062154769897461,
+          0.0010619163513183594,
+          0.001062154769897461
+        ]
+      },
+      "timestamp": 1752331777.9305675
+    },
+    {
+      "benchmark_id": "memory_64x64_1752331777930",
+      "benchmark_type": "memory_usage",
+      "test_parameters": {
+        "tensor_size": [
+          64,
+          64
+        ]
+      },
+      "execution_time": 7.152557373046875e-07,
+      "memory_usage": 16384,
+      "accuracy_score": 1.0,
+      "throughput": 1398101.3333333333,
+      "error_rate": 0.0,
+      "metadata": {
+        "baseline_memory": 1049600,
+        "peak_memory": 1065984,
+        "memory_efficiency": 0.25
+      },
+      "timestamp": 1752331777.9305787
+    },
+    {
+      "benchmark_id": "memory_128x128_1752331777930",
+      "benchmark_type": "memory_usage",
+      "test_parameters": {
+        "tensor_size": [
+          128,
+          128
+        ]
+      },
+      "execution_time": 7.152557373046875e-07,
+      "memory_usage": 65536,
+      "accuracy_score": 1.0,
+      "throughput": 1398101.3333333333,
+      "error_rate": 0.0,
+      "metadata": {
+        "baseline_memory": 1049600,
+        "peak_memory": 1115136,
+        "memory_efficiency": 0.25
+      },
+      "timestamp": 1752331777.9305835
+    },
+    {
+      "benchmark_id": "throughput_pattern_encode_1752331780931",
+      "benchmark_type": "throughput",
+      "test_parameters": {
+        "operation_type": "pattern_encode",
+        "duration": 3.0
+      },
+      "execution_time": 3.000458002090454,
+      "memory_usage": 1050112,
+      "accuracy_score": 0.7999999999999878,
+      "throughput": 940.8563619398049,
+      "error_rate": 0.20000000000001217,
+      "metadata": {
+        "operations_completed": 2823,
+        "operations_per_second": 940.8563619398049,
+        "target_duration": 3.0,
+        "actual_duration": 3.000458002090454
+      },
+      "timestamp": 1752331780.9310753
+    },
+    {
+      "benchmark_id": "throughput_bridge_synthesis_1752331783931",
+      "benchmark_type": "throughput",
+      "test_parameters": {
+        "operation_type": "bridge_synthesis",
+        "duration": 3.0
+      },
+      "execution_time": 3.0008695125579834,
+      "memory_usage": 1050112,
+      "accuracy_score": 0.7999999999999878,
+      "throughput": 941.0605786696746,
+      "error_rate": 0.20000000000001217,
+      "metadata": {
+        "operations_completed": 2824,
+        "operations_per_second": 941.0605786696746,
+        "target_duration": 3.0,
+        "actual_duration": 3.0008695125579834
+      },
+      "timestamp": 1752331783.931973
+    },
+    {
+      "benchmark_id": "coherence_0_1752331783931",
+      "benchmark_type": "tensor_coherence",
+      "test_parameters": {
+        "coherence_test": 0
+      },
+      "execution_time": 2.384185791015625e-06,
+      "memory_usage": 1050624,
+      "accuracy_score": 0.7999999999999999,
+      "throughput": 1258291.2,
+      "error_rate": 0.20000000000000007,
+      "metadata": {
+        "coherence_scores": [
+          0.7,
+          0.7999999999999999,
+          0.8999999999999999
+        ],
+        "coherence_variance": 0.009999999999999995,
+        "coherence_tests_completed": 3
+      },
+      "timestamp": 1752331783.9320962
+    },
+    {
+      "benchmark_id": "coherence_1_1752331783932",
+      "benchmark_type": "tensor_coherence",
+      "test_parameters": {
+        "coherence_test": 1
+      },
+      "execution_time": 1.9073486328125e-06,
+      "memory_usage": 1050624,
+      "accuracy_score": 0.7999999999999999,
+      "throughput": 1572864.0,
+      "error_rate": 0.20000000000000007,
+      "metadata": {
+        "coherence_scores": [
+          0.7,
+          0.7999999999999999,
+          0.8999999999999999
+        ],
+        "coherence_variance": 0.009999999999999995,
+        "coherence_tests_completed": 3
+      },
+      "timestamp": 1752331783.9321423
+    },
+    {
+      "benchmark_id": "coherence_2_1752331783932",
+      "benchmark_type": "tensor_coherence",
+      "test_parameters": {
+        "coherence_test": 2
+      },
+      "execution_time": 7.152557373046875e-07,
+      "memory_usage": 1050624,
+      "accuracy_score": 0.7999999999999999,
+      "throughput": 4194304.0,
+      "error_rate": 0.20000000000000007,
+      "metadata": {
+        "coherence_scores": [
+          0.7,
+          0.7999999999999999,
+          0.8999999999999999
+        ],
+        "coherence_variance": 0.009999999999999995,
+        "coherence_tests_completed": 3
+      },
+      "timestamp": 1752331783.9321785
+    },
+    {
+      "benchmark_id": "coherence_3_1752331783932",
+      "benchmark_type": "tensor_coherence",
+      "test_parameters": {
+        "coherence_test": 3
+      },
+      "execution_time": 7.152557373046875e-07,
+      "memory_usage": 1050624,
+      "accuracy_score": 0.7999999999999999,
+      "throughput": 4194304.0,
+      "error_rate": 0.20000000000000007,
+      "metadata": {
+        "coherence_scores": [
+          0.7,
+          0.7999999999999999,
+          0.8999999999999999
+        ],
+        "coherence_variance": 0.009999999999999995,
+        "coherence_tests_completed": 3
+      },
+      "timestamp": 1752331783.9322107
+    },
+    {
+      "benchmark_id": "coherence_4_1752331783932",
+      "benchmark_type": "tensor_coherence",
+      "test_parameters": {
+        "coherence_test": 4
+      },
+      "execution_time": 4.76837158203125e-07,
+      "memory_usage": 1050624,
+      "accuracy_score": 0.7999999999999999,
+      "throughput": 6291456.0,
+      "error_rate": 0.20000000000000007,
+      "metadata": {
+        "coherence_scores": [
+          0.7,
+          0.7999999999999999,
+          0.8999999999999999
+        ],
+        "coherence_variance": 0.009999999999999995,
+        "coherence_tests_completed": 3
+      },
+      "timestamp": 1752331783.932242
+    },
+    {
+      "benchmark_id": "bridge_0_1752331783932",
+      "benchmark_type": "neural_symbolic_bridge",
+      "test_parameters": {
+        "bridge_test": 0
+      },
+      "execution_time": 1.1920928955078125e-06,
+      "memory_usage": 1051904,
+      "accuracy_score": 0.78,
+      "throughput": 838860.8,
+      "error_rate": 0.21999999999999997,
+      "metadata": {
+        "bridge_coherence": 0.82,
+        "bridge_accuracy": 0.78,
+        "test_case": 0
+      },
+      "timestamp": 1752331783.9322543
+    },
+    {
+      "benchmark_id": "bridge_1_1752331783932",
+      "benchmark_type": "neural_symbolic_bridge",
+      "test_parameters": {
+        "bridge_test": 1
+      },
+      "execution_time": 7.152557373046875e-07,
+      "memory_usage": 1051904,
+      "accuracy_score": 0.8,
+      "throughput": 1398101.3333333333,
+      "error_rate": 0.19999999999999996,
+      "metadata": {
+        "bridge_coherence": 0.85,
+        "bridge_accuracy": 0.8,
+        "test_case": 1
+      },
+      "timestamp": 1752331783.9322584
+    },
+    {
+      "benchmark_id": "bridge_2_1752331783932",
+      "benchmark_type": "neural_symbolic_bridge",
+      "test_parameters": {
+        "bridge_test": 2
+      },
+      "execution_time": 2.384185791015625e-07,
+      "memory_usage": 1051904,
+      "accuracy_score": 0.8200000000000001,
+      "throughput": 4194304.0,
+      "error_rate": 0.17999999999999994,
+      "metadata": {
+        "bridge_coherence": 0.82,
+        "bridge_accuracy": 0.8200000000000001,
+        "test_case": 2
+      },
+      "timestamp": 1752331783.9322608
+    },
+    {
+      "benchmark_id": "bridge_3_1752331783932",
+      "benchmark_type": "neural_symbolic_bridge",
+      "test_parameters": {
+        "bridge_test": 3
+      },
+      "execution_time": 2.384185791015625e-07,
+      "memory_usage": 1051904,
+      "accuracy_score": 0.78,
+      "throughput": 4194304.0,
+      "error_rate": 0.21999999999999997,
+      "metadata": {
+        "bridge_coherence": 0.85,
+        "bridge_accuracy": 0.78,
+        "test_case": 3
+      },
+      "timestamp": 1752331783.9322631
+    },
+    {
+      "benchmark_id": "bridge_4_1752331783932",
+      "benchmark_type": "neural_symbolic_bridge",
+      "test_parameters": {
+        "bridge_test": 4
+      },
+      "execution_time": 2.384185791015625e-07,
+      "memory_usage": 1051904,
+      "accuracy_score": 0.8,
+      "throughput": 4194304.0,
+      "error_rate": 0.19999999999999996,
+      "metadata": {
+        "bridge_coherence": 0.82,
+        "bridge_accuracy": 0.8,
+        "test_case": 4
+      },
+      "timestamp": 1752331783.9322655
+    }
+  ],
+  "real_data_validations": [
+    {
+      "validation_id": "demo_agent_validation_synthetic_patterns_1752331783932",
+      "data_source": "synthetic_patterns",
+      "data_size": 20,
+      "validation_accuracy": 0.9299999999999999,
+      "pattern_consistency": 0.78,
+      "semantic_coherence": 0.75,
+      "temporal_stability": 0.82
+    },
+    {
+      "validation_id": "demo_agent_validation_cognitive_logs_1752331783932",
+      "data_source": "cognitive_logs",
+      "data_size": 15,
+      "validation_accuracy": 0.88,
+      "pattern_consistency": 0.78,
+      "semantic_coherence": 0.75,
+      "temporal_stability": 0.82
+    },
+    {
+      "validation_id": "demo_agent_validation_behavioral_traces_1752331783932",
+      "data_source": "behavioral_traces",
+      "data_size": 12,
+      "validation_accuracy": 0.85,
+      "pattern_consistency": 0.78,
+      "semantic_coherence": 0.75,
+      "temporal_stability": 0.82
+    }
+  ],
+  "tensor_signatures": [
+    {
+      "signature_id": "demo_agent_sig_1752331777887",
+      "operation_type": "neural_symbolic_bridge",
+      "input_shapes": [
+        [
+          64,
+          128
+        ],
+        [
+          128,
+          64
+        ]
+      ],
+      "output_shape": [
+        64,
+        64
+      ],
+      "parameter_count": 20480,
+      "computational_complexity": "O(n\u00b2)",
+      "memory_footprint": 81920,
+      "semantic_dimensions": [
+        "neural_features",
+        "symbolic_patterns",
+        "bridge_coherence",
+        "synthesis_quality"
+      ],
+      "creation_timestamp": 1752331777.8877811
+    }
+  ],
+  "report_timestamp": 1752331783.9330242
+}
