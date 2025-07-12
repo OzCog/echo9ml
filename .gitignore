@@ -62,5 +62,5 @@ coverage.xml
 .hypothesis/
 
 # Cognitive Integration Workspace (exclude temporary files)
-cognitive_workspace/
-cognitive_logs/
+# cognitive_workspace/
+# cognitive_logs/
