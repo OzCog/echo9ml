@@ -1,0 +1,56 @@
+# meta_cognitive_recursion Module Flowchart
+
+```mermaid
+graph TD
+    meta_cognitive_recursion[meta_cognitive_recursion]
+    meta_cognitive_recursion_MetaCognitiveState[MetaCognitiveState]
+    meta_cognitive_recursion --> meta_cognitive_recursion_MetaCognitiveState
+    meta_cognitive_recursion_RecursiveObservation[RecursiveObservation]
+    meta_cognitive_recursion --> meta_cognitive_recursion_RecursiveObservation
+    meta_cognitive_recursion_SelfAnalysisModule[SelfAnalysisModule]
+    meta_cognitive_recursion --> meta_cognitive_recursion_SelfAnalysisModule
+    meta_cognitive_recursion_SelfAnalysisModule___init__[__init__()]
+    meta_cognitive_recursion_SelfAnalysisModule --> meta_cognitive_recursion_SelfAnalysisModule___init__
+    meta_cognitive_recursion_SelfAnalysisModule_observe_cognitive_process[observe_cognitive_process()]
+    meta_cognitive_recursion_SelfAnalysisModule --> meta_cognitive_recursion_SelfAnalysisModule_observe_cognitive_process
+    meta_cognitive_recursion_SelfAnalysisModule__calculate_cognitive_load[_calculate_cognitive_load()]
+    meta_cognitive_recursion_SelfAnalysisModule --> meta_cognitive_recursion_SelfAnalysisModule__calculate_cognitive_load
+    meta_cognitive_recursion_SelfAnalysisModule__calculate_performance_impact[_calculate_performance_impact()]
+    meta_cognitive_recursion_SelfAnalysisModule --> meta_cognitive_recursion_SelfAnalysisModule__calculate_performance_impact
+    meta_cognitive_recursion_SelfAnalysisModule__detect_cognitive_patterns[_detect_cognitive_patterns()]
+    meta_cognitive_recursion_SelfAnalysisModule --> meta_cognitive_recursion_SelfAnalysisModule__detect_cognitive_patterns
+    meta_cognitive_recursion_AdaptiveOptimizer[AdaptiveOptimizer]
+    meta_cognitive_recursion --> meta_cognitive_recursion_AdaptiveOptimizer
+    meta_cognitive_recursion_AdaptiveOptimizer___init__[__init__()]
+    meta_cognitive_recursion_AdaptiveOptimizer --> meta_cognitive_recursion_AdaptiveOptimizer___init__
+    meta_cognitive_recursion_AdaptiveOptimizer_adapt_evolutionary_parameters[adapt_evolutionary_parameters()]
+    meta_cognitive_recursion_AdaptiveOptimizer --> meta_cognitive_recursion_AdaptiveOptimizer_adapt_evolutionary_parameters
+    meta_cognitive_recursion_AdaptiveOptimizer_optimize_fitness_landscape[optimize_fitness_landscape()]
+    meta_cognitive_recursion_AdaptiveOptimizer --> meta_cognitive_recursion_AdaptiveOptimizer_optimize_fitness_landscape
+    meta_cognitive_recursion_AdaptiveOptimizer__calculate_variance[_calculate_variance()]
+    meta_cognitive_recursion_AdaptiveOptimizer --> meta_cognitive_recursion_AdaptiveOptimizer__calculate_variance
+    meta_cognitive_recursion_AdaptiveOptimizer__calculate_pattern_diversity[_calculate_pattern_diversity()]
+    meta_cognitive_recursion_AdaptiveOptimizer --> meta_cognitive_recursion_AdaptiveOptimizer__calculate_pattern_diversity
+    meta_cognitive_recursion_LiveMetricsMonitor[LiveMetricsMonitor]
+    meta_cognitive_recursion --> meta_cognitive_recursion_LiveMetricsMonitor
+    meta_cognitive_recursion_LiveMetricsMonitor___init__[__init__()]
+    meta_cognitive_recursion_LiveMetricsMonitor --> meta_cognitive_recursion_LiveMetricsMonitor___init__
+    meta_cognitive_recursion_LiveMetricsMonitor_start_monitoring[start_monitoring()]
+    meta_cognitive_recursion_LiveMetricsMonitor --> meta_cognitive_recursion_LiveMetricsMonitor_start_monitoring
+    meta_cognitive_recursion_LiveMetricsMonitor_stop_monitoring[stop_monitoring()]
+    meta_cognitive_recursion_LiveMetricsMonitor --> meta_cognitive_recursion_LiveMetricsMonitor_stop_monitoring
+    meta_cognitive_recursion_LiveMetricsMonitor_add_callback[add_callback()]
+    meta_cognitive_recursion_LiveMetricsMonitor --> meta_cognitive_recursion_LiveMetricsMonitor_add_callback
+    meta_cognitive_recursion_LiveMetricsMonitor_record_metrics[record_metrics()]
+    meta_cognitive_recursion_LiveMetricsMonitor --> meta_cognitive_recursion_LiveMetricsMonitor_record_metrics
+    meta_cognitive_recursion_MetaCognitiveRecursionEngine[MetaCognitiveRecursionEngine]
+    meta_cognitive_recursion --> meta_cognitive_recursion_MetaCognitiveRecursionEngine
+    meta_cognitive_recursion_MetaCognitiveRecursionEngine___init__[__init__()]
+    meta_cognitive_recursion_MetaCognitiveRecursionEngine --> meta_cognitive_recursion_MetaCognitiveRecursionEngine___init__
+    meta_cognitive_recursion_MetaCognitiveRecursionEngine__update_meta_cognitive_state[_update_meta_cognitive_state()]
+    meta_cognitive_recursion_MetaCognitiveRecursionEngine --> meta_cognitive_recursion_MetaCognitiveRecursionEngine__update_meta_cognitive_state
+    meta_cognitive_recursion_MetaCognitiveRecursionEngine_generate_recursion_flowchart[generate_recursion_flowchart()]
+    meta_cognitive_recursion_MetaCognitiveRecursionEngine --> meta_cognitive_recursion_MetaCognitiveRecursionEngine_generate_recursion_flowchart
+    meta_cognitive_recursion_MetaCognitiveRecursionEngine_export_results[export_results()]
+    meta_cognitive_recursion_MetaCognitiveRecursionEngine --> meta_cognitive_recursion_MetaCognitiveRecursionEngine_export_results
+```

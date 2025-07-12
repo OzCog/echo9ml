@@ -1,0 +1,39 @@
+# tensor_fragment_architecture Module Flowchart
+
+```mermaid
+graph TD
+    tensor_fragment_architecture[tensor_fragment_architecture]
+    tensor_fragment_architecture_FragmentCompressionType[FragmentCompressionType]
+    tensor_fragment_architecture --> tensor_fragment_architecture_FragmentCompressionType
+    tensor_fragment_architecture_FragmentSharingMode[FragmentSharingMode]
+    tensor_fragment_architecture --> tensor_fragment_architecture_FragmentSharingMode
+    tensor_fragment_architecture_TensorFragment[TensorFragment]
+    tensor_fragment_architecture --> tensor_fragment_architecture_TensorFragment
+    tensor_fragment_architecture_TensorFragment___post_init__[__post_init__()]
+    tensor_fragment_architecture_TensorFragment --> tensor_fragment_architecture_TensorFragment___post_init__
+    tensor_fragment_architecture_TensorFragment__calculate_checksum[_calculate_checksum()]
+    tensor_fragment_architecture_TensorFragment --> tensor_fragment_architecture_TensorFragment__calculate_checksum
+    tensor_fragment_architecture_TensorFragment_to_dict[to_dict()]
+    tensor_fragment_architecture_TensorFragment --> tensor_fragment_architecture_TensorFragment_to_dict
+    tensor_fragment_architecture_TensorFragment_from_dict[from_dict()]
+    tensor_fragment_architecture_TensorFragment --> tensor_fragment_architecture_TensorFragment_from_dict
+    tensor_fragment_architecture_TensorFragment_validate_integrity[validate_integrity()]
+    tensor_fragment_architecture_TensorFragment --> tensor_fragment_architecture_TensorFragment_validate_integrity
+    tensor_fragment_architecture_FragmentOperation[FragmentOperation]
+    tensor_fragment_architecture --> tensor_fragment_architecture_FragmentOperation
+    tensor_fragment_architecture_DistributedTensorKernel[DistributedTensorKernel]
+    tensor_fragment_architecture --> tensor_fragment_architecture_DistributedTensorKernel
+    tensor_fragment_architecture_DistributedTensorKernel___init__[__init__()]
+    tensor_fragment_architecture_DistributedTensorKernel --> tensor_fragment_architecture_DistributedTensorKernel___init__
+    tensor_fragment_architecture_DistributedTensorKernel_create_tensor_fragment[create_tensor_fragment()]
+    tensor_fragment_architecture_DistributedTensorKernel --> tensor_fragment_architecture_DistributedTensorKernel_create_tensor_fragment
+    tensor_fragment_architecture_DistributedTensorKernel_share_fragment[share_fragment()]
+    tensor_fragment_architecture_DistributedTensorKernel --> tensor_fragment_architecture_DistributedTensorKernel_share_fragment
+    tensor_fragment_architecture_DistributedTensorKernel_receive_fragment[receive_fragment()]
+    tensor_fragment_architecture_DistributedTensorKernel --> tensor_fragment_architecture_DistributedTensorKernel_receive_fragment
+    tensor_fragment_architecture_DistributedTensorKernel_merge_fragments[merge_fragments()]
+    tensor_fragment_architecture_DistributedTensorKernel --> tensor_fragment_architecture_DistributedTensorKernel_merge_fragments
+    tensor_fragment_architecture_create_distributed_tensor_kernel[create_distributed_tensor_kernel()]
+    tensor_fragment_architecture --> tensor_fragment_architecture_create_distributed_tensor_kernel
+    style tensor_fragment_architecture fill:#99ff99
+```

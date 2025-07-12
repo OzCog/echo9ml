@@ -1,0 +1,30 @@
+# hypergraph_visualization Module Flowchart
+
+```mermaid
+graph TD
+    hypergraph_visualization[hypergraph_visualization]
+    hypergraph_visualization_VisualizationFormat[VisualizationFormat]
+    hypergraph_visualization --> hypergraph_visualization_VisualizationFormat
+    hypergraph_visualization_DiagramType[DiagramType]
+    hypergraph_visualization --> hypergraph_visualization_DiagramType
+    hypergraph_visualization_VisualizationNode[VisualizationNode]
+    hypergraph_visualization --> hypergraph_visualization_VisualizationNode
+    hypergraph_visualization_VisualizationEdge[VisualizationEdge]
+    hypergraph_visualization --> hypergraph_visualization_VisualizationEdge
+    hypergraph_visualization_VisualizationGraph[VisualizationGraph]
+    hypergraph_visualization --> hypergraph_visualization_VisualizationGraph
+    hypergraph_visualization_HypergraphFlowchartGenerator[HypergraphFlowchartGenerator]
+    hypergraph_visualization --> hypergraph_visualization_HypergraphFlowchartGenerator
+    hypergraph_visualization_HypergraphFlowchartGenerator___init__[__init__()]
+    hypergraph_visualization_HypergraphFlowchartGenerator --> hypergraph_visualization_HypergraphFlowchartGenerator___init__
+    hypergraph_visualization_HypergraphFlowchartGenerator_generate_hypergraph_fragment_diagram[generate_hypergraph_fragment_diagram()]
+    hypergraph_visualization_HypergraphFlowchartGenerator --> hypergraph_visualization_HypergraphFlowchartGenerator_generate_hypergraph_fragment_diagram
+    hypergraph_visualization_HypergraphFlowchartGenerator_generate_tensor_architecture_diagram[generate_tensor_architecture_diagram()]
+    hypergraph_visualization_HypergraphFlowchartGenerator --> hypergraph_visualization_HypergraphFlowchartGenerator_generate_tensor_architecture_diagram
+    hypergraph_visualization_HypergraphFlowchartGenerator_generate_translation_flow_diagram[generate_translation_flow_diagram()]
+    hypergraph_visualization_HypergraphFlowchartGenerator --> hypergraph_visualization_HypergraphFlowchartGenerator_generate_translation_flow_diagram
+    hypergraph_visualization_HypergraphFlowchartGenerator_generate_comprehensive_dashboard[generate_comprehensive_dashboard()]
+    hypergraph_visualization_HypergraphFlowchartGenerator --> hypergraph_visualization_HypergraphFlowchartGenerator_generate_comprehensive_dashboard
+    hypergraph_visualization_create_visualization_generator[create_visualization_generator()]
+    hypergraph_visualization --> hypergraph_visualization_create_visualization_generator
+```

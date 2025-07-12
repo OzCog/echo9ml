@@ -60,6 +60,11 @@ nosetests.xml
 coverage.xml
 *.cover
 .hypothesis/
+.pytest_cache/
+coverage_html/
+coverage_html_detailed/
+coverage_detailed.json
+phase6_coverage.json
 
 # Cognitive Integration Workspace (exclude temporary files)
 # cognitive_workspace/

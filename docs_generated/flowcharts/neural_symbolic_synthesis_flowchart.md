@@ -1,0 +1,35 @@
+# neural_symbolic_synthesis Module Flowchart
+
+```mermaid
+graph TD
+    neural_symbolic_synthesis[neural_symbolic_synthesis]
+    neural_symbolic_synthesis_SynthesisOperationType[SynthesisOperationType]
+    neural_symbolic_synthesis --> neural_symbolic_synthesis_SynthesisOperationType
+    neural_symbolic_synthesis_AtomSpaceIntegrationMode[AtomSpaceIntegrationMode]
+    neural_symbolic_synthesis --> neural_symbolic_synthesis_AtomSpaceIntegrationMode
+    neural_symbolic_synthesis_SymbolicPattern[SymbolicPattern]
+    neural_symbolic_synthesis --> neural_symbolic_synthesis_SymbolicPattern
+    neural_symbolic_synthesis_SymbolicPattern_to_atomspace_format[to_atomspace_format()]
+    neural_symbolic_synthesis_SymbolicPattern --> neural_symbolic_synthesis_SymbolicPattern_to_atomspace_format
+    neural_symbolic_synthesis_NeuralSymbolicPathway[NeuralSymbolicPathway]
+    neural_symbolic_synthesis --> neural_symbolic_synthesis_NeuralSymbolicPathway
+    neural_symbolic_synthesis_SynthesisMetrics[SynthesisMetrics]
+    neural_symbolic_synthesis --> neural_symbolic_synthesis_SynthesisMetrics
+    neural_symbolic_synthesis_SynthesisMetrics_to_dict[to_dict()]
+    neural_symbolic_synthesis_SynthesisMetrics --> neural_symbolic_synthesis_SynthesisMetrics_to_dict
+    neural_symbolic_synthesis_NeuralSymbolicSynthesisEngine[NeuralSymbolicSynthesisEngine]
+    neural_symbolic_synthesis --> neural_symbolic_synthesis_NeuralSymbolicSynthesisEngine
+    neural_symbolic_synthesis_NeuralSymbolicSynthesisEngine___init__[__init__()]
+    neural_symbolic_synthesis_NeuralSymbolicSynthesisEngine --> neural_symbolic_synthesis_NeuralSymbolicSynthesisEngine___init__
+    neural_symbolic_synthesis_NeuralSymbolicSynthesisEngine__setup_atomspace_integration[_setup_atomspace_integration()]
+    neural_symbolic_synthesis_NeuralSymbolicSynthesisEngine --> neural_symbolic_synthesis_NeuralSymbolicSynthesisEngine__setup_atomspace_integration
+    neural_symbolic_synthesis_NeuralSymbolicSynthesisEngine_create_symbolic_pattern[create_symbolic_pattern()]
+    neural_symbolic_synthesis_NeuralSymbolicSynthesisEngine --> neural_symbolic_synthesis_NeuralSymbolicSynthesisEngine_create_symbolic_pattern
+    neural_symbolic_synthesis_NeuralSymbolicSynthesisEngine_execute_synthesis_operation[execute_synthesis_operation()]
+    neural_symbolic_synthesis_NeuralSymbolicSynthesisEngine --> neural_symbolic_synthesis_NeuralSymbolicSynthesisEngine_execute_synthesis_operation
+    neural_symbolic_synthesis_NeuralSymbolicSynthesisEngine__encode_symbolic_patterns[_encode_symbolic_patterns()]
+    neural_symbolic_synthesis_NeuralSymbolicSynthesisEngine --> neural_symbolic_synthesis_NeuralSymbolicSynthesisEngine__encode_symbolic_patterns
+    neural_symbolic_synthesis_create_neural_symbolic_synthesis_engine[create_neural_symbolic_synthesis_engine()]
+    neural_symbolic_synthesis --> neural_symbolic_synthesis_create_neural_symbolic_synthesis_engine
+    style neural_symbolic_synthesis fill:#99ff99
+```
