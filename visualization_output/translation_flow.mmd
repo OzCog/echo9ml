@@ -1,0 +1,19 @@
+
+graph TD
+    A[Ko6ml Primitive] --> B[Validation]
+    B --> C[Type Mapping]
+    C --> D[AtomSpace Fragment]
+    D --> E[Round-trip Test]
+    E --> F{Similarity > 80%?}
+    F -->|Yes| G[Success]
+    F -->|No| H[Adjustment Needed]
+    H --> C
+    
+    I[Agent State] --> J[ConceptNode + EvaluationLinks]
+    K[Memory Fragment] --> L[ConceptNode + InheritanceLink]
+    M[Reasoning Pattern] --> N[PredicateNode + LogicalLinks]
+    
+    style A fill:#4CAF50
+    style D fill:#FF9800
+    style G fill:#8BC34A
+    style H fill:#FF5722
