@@ -1,0 +1,62 @@
+[run]
+source = .
+omit = 
+    */test_*
+    */tests/*
+    */venv/*
+    */env/*
+    */__pycache__/*
+    */site-packages/*
+    setup.py
+    */migrations/*
+    */.git/*
+    */node_modules/*
+    */chrome_user_data/*
+    */browser_data/*
+    */deep_tree_echo_profile/*
+    */memory_storage/*
+    */cognitive_logs/*
+    */activity_logs/*
+    */visualization_output/*
+    */wiki/*
+    */todo/*
+    */Todo/*
+    */.mem/*
+    */.bolt/*
+    */.codesandbox/*
+    */.devcontainer/*
+    */.github/*
+    *.png
+    *.jpg
+    *.jpeg
+    *.gif
+    *.md
+    *.txt
+    *.json
+    *.log
+    *.backup*
+    *.old
+    *.v0
+    *.v1
+    *.v2
+    *.sh
+    *.yml
+    *.yaml
+    *.rs
+    *.dockerfile
+    Dockerfile
+    docker-*
+    
+[report]
+precision = 2
+show_missing = True
+skip_covered = False
+sort = Cover
+
+[html]
+directory = coverage_html
+title = Echo9ML Test Coverage Report
+
+[json]
+output = coverage.json
+pretty_print = true
