@@ -2158,6 +2158,8 @@ def api_chat_session_detail(session_id):
     try:
         try:
             if session_manager:
+                if '..' in session_id or '/' in session_id or '\\' in session_id:
+                    return jsonify({'success': False, 'error': 'Invalid session_id'})
                 session = session_manager.get_session(session_id)
                 if not session:
                     return jsonify({'success': False, 'error': 'Session not found'})
