@@ -615,8 +615,10 @@ class ChatSessionManager:
     def _load_session(self, session_id: str) -> Optional[ChatSession]:
         """Load a session from disk"""
         try:
-            session_file = self.sessions_dir / f"{session_id}.json"
-            if session_file.exists():
+            session_file = os.path.normpath(self.sessions_dir / f"{session_id}.json")
+            if not session_file.startswith(str(self.sessions_dir)):
+                raise ValueError(f"Invalid session_id: {session_id}")
+            if Path(session_file).exists():
                 with open(session_file, 'r') as f:
                     data = json.load(f)
                 return ChatSession.from_dict(data)
