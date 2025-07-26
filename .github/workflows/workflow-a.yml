@@ -9,7 +9,7 @@ on:
 
 jobs:
   modify_workflow_b:
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
