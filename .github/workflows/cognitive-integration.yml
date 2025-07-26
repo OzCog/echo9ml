@@ -80,18 +80,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PHASE: ${{ inputs.phase || 'all' }}
         run: >-
-          python cognitive_integration_orchestrator.py --create-issues 
+          python cognitive_integration_orchestrator.py --create-issues
           --phase "$PHASE"
 
       - name: Execute Cognitive Integration
         if: >-
-          ${{ inputs.execute_integration == true || 
+          ${{ inputs.execute_integration == true ||
           github.event_name == 'push' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PHASE: ${{ inputs.phase || 'all' }}
         run: >-
-          python cognitive_integration_orchestrator.py --execute 
+          python cognitive_integration_orchestrator.py --execute
           --phase "$PHASE"
 
       - name: Generate Cognitive Status Report
