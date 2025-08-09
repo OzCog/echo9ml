@@ -1,5 +1,7 @@
 ---
 name: Auto-increment Version
+permissions:
+  contents: write
 
 on:
   push:
