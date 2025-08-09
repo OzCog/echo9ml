@@ -1,6 +1,9 @@
 ---
 name: Self-Improvement with Copilot
 
+permissions:
+  contents: read
+
 on:
   push:
     branches: ["main"]
