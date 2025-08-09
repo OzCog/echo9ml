@@ -1,6 +1,9 @@
 ---
 name: EchoPilot Self-Improvement Workflow
 
+permissions:
+  contents: read
+
 on:
   schedule:
     - cron: '0 * * * *'  # Runs every hour
