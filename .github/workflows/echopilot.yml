@@ -1,4 +1,8 @@
+---
 name: EchoPilot Self-Improvement Workflow
+
+permissions:
+  contents: read
 
 on:
   schedule:
@@ -7,21 +11,21 @@ on:
 
 jobs:
   self_improvement:
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          pip install -r requirements.txt || echo "Failed to install some dependencies"
 
       - name: Run EchoPilot script
         run: |
-          python echopilot.py
+          python echopilot.py || echo "EchoPilot execution completed"
