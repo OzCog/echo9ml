@@ -35,46 +35,82 @@ module DeepTreeEchoLLMInterface
   extend self
   
   def generate_response(content : String, echo_value : Float64, emotional_state : Array(Float64), spatial_context : SpatialContext) : Hash(String, JSON::Any)
-    # Call the real Node.js LLM interface (simplified version without external deps)
-    script_path = File.expand_path("deep_tree_echo_llm_interface_simple.js", __DIR__)
+    # PRIORITY: Try real node-llama-cpp interface first
+    real_llm_script = File.expand_path("deep_tree_echo_llm_interface.js", __DIR__)
     
     # Prepare arguments for the Node.js script
     spatial_json = spatial_context.to_json
     emotional_json = emotional_state.to_json
     
-    # Execute the Node.js LLM interface
-    begin
-      output = IO::Memory.new
-      error = IO::Memory.new
-      
-      result = Process.run(
-        "node",
-        [script_path, content, echo_value.to_s, emotional_json, spatial_json],
-        output: output,
-        error: error
-      )
-      
-      if result.success?
-        # Parse the JSON response from the LLM interface
-        response_data = JSON.parse(output.to_s)
+    # First, try the REAL node-llama-cpp interface
+    if File.exists?(real_llm_script)
+      puts "🔥 Using REAL node-llama-cpp interface for authentic LLM inference"
+      begin
+        output = IO::Memory.new
+        error = IO::Memory.new
         
-        # Convert to Hash(String, JSON::Any) for compatibility
-        response_hash = Hash(String, JSON::Any).new
-        response_data.as_h.each do |key, value|
-          response_hash[key] = value
+        result = Process.run(
+          "node",
+          [real_llm_script, content, echo_value.to_s, emotional_json, spatial_json],
+          output: output,
+          error: error
+        )
+        
+        if result.success?
+          # Parse the JSON response from the REAL LLM interface
+          response_data = JSON.parse(output.to_s)
+          
+          # Convert to Hash(String, JSON::Any) for compatibility
+          response_hash = Hash(String, JSON::Any).new
+          response_data.as_h.each do |key, value|
+            response_hash[key] = value
+          end
+          
+          puts "✅ Crystal->Node.js REAL LLM inference successful (type: #{response_hash["inference_type"]?})"
+          return response_hash
+        else
+          puts "⚠️ Real LLM interface error, trying fallback: #{error.to_s}"
         end
         
-        puts "✅ Crystal->Node.js LLM inference successful (type: #{response_hash["inference_type"]?})"
-        return response_hash
-      else
-        puts "⚠️ LLM interface error: #{error.to_s}"
-        return generate_fallback_response(content, echo_value, emotional_state, spatial_context)
+      rescue ex : Exception
+        puts "❌ Error calling real LLM interface, trying fallback: #{ex.message}"
       end
-      
-    rescue ex : Exception
-      puts "❌ Error calling LLM interface: #{ex.message}"
-      return generate_fallback_response(content, echo_value, emotional_state, spatial_context)
     end
+    
+    # Fallback to simplified interface if real LLM is not available
+    simple_llm_script = File.expand_path("deep_tree_echo_llm_interface_simple.js", __DIR__)
+    if File.exists?(simple_llm_script)
+      puts "⚠️ Falling back to simplified interface (real LLM unavailable)"
+      begin
+        output = IO::Memory.new
+        error = IO::Memory.new
+        
+        result = Process.run(
+          "node",
+          [simple_llm_script, content, echo_value.to_s, emotional_json, spatial_json],
+          output: output,
+          error: error
+        )
+        
+        if result.success?
+          response_data = JSON.parse(output.to_s)
+          
+          response_hash = Hash(String, JSON::Any).new
+          response_data.as_h.each do |key, value|
+            response_hash[key] = value
+          end
+          
+          puts "✅ Crystal->Node.js simplified inference successful (type: #{response_hash["inference_type"]?})"
+          return response_hash
+        end
+      rescue ex : Exception
+        puts "❌ Error calling simplified LLM interface: #{ex.message}"
+      end
+    end
+    
+    # Final fallback to Deep Tree Echo cognitive architecture
+    puts "🧠 Using pure Deep Tree Echo cognitive fallback (NO external interfaces available)"
+    return generate_fallback_response(content, echo_value, emotional_state, spatial_context)
   end
   
   private def generate_fallback_response(content : String, echo_value : Float64, emotional_state : Array(Float64), spatial_context : SpatialContext) : Hash(String, JSON::Any)

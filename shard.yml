@@ -5,7 +5,7 @@ description: Deep Tree Echo Crystal Lucky Chatbot Interface with real node-llama
 authors:
   - Deep Tree Echo Team
 
-crystal: 1.9.2
+crystal: ">= 1.0.0"
 
 dependencies:
   lucky:
@@ -14,9 +14,25 @@ dependencies:
   uuid:
     github: crystal-lang/crystal-uuid
     version: ~> 1.0.0
+  json:
+    github: crystal-lang/crystal-json
+    version: ~> 0.1.0
+  http:
+    github: crystal-lang/crystal-http
+    version: ~> 0.1.0
+
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+    version: ~> 1.4.0
 
 targets:
   crystal-echo:
     main: crystal-echo.cr
+  crystal-echo-server:
+    main: crystal_echo_server.cr
+
+scripts:
+  postinstall: "shards install"
 
 license: MIT
