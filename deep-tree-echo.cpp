@@ -102,6 +102,7 @@ private:
     std::mutex queue_mutex;
     std::condition_variable cv;
     bool running = true;
+    std::thread worker;
     
     // Integration components
     std::unique_ptr<HyperEchoEngine> hyper_echo_engine;
@@ -120,12 +121,15 @@ public:
         std::cout << "Max Depth: " << max_depth << std::endl;
         
         // Initialize worker thread for async processing
-        std::thread(&DeepTreeEchoOrchestrator::worker_thread, this).detach();
+        worker = std::thread(&DeepTreeEchoOrchestrator::worker_thread, this);
     }
     
     ~DeepTreeEchoOrchestrator() {
         running = false;
         cv.notify_all();
+        if (worker.joinable()) {
+            worker.join();
+        }
     }
     
     /**
@@ -547,10 +551,6 @@ int main() {
     std::string inference_result = orchestrator->llama_inference("What is the meaning of recursive echo in cognitive architecture?");
     std::cout << "LLAMA Inference Result: " << inference_result << std::endl;
     
-    // Coordinate with other engines
-    orchestrator->coordinate_with_go_engine("initialize_hyper_echo");
-    orchestrator->interface_with_crystal_chatbot("greeting_protocol_activate");
-    
     // Display status
     auto status = orchestrator->get_status();
     std::cout << "\n=== Orchestrator Status ===" << std::endl;
@@ -560,6 +560,20 @@ int main() {
     
     std::cout << "\n=== Deep Tree Echo Orchestrator Ready ===" << std::endl;
     std::cout << "System is permanently installed and ready for orchestration." << std::endl;
+    
+    // Keep the orchestrator running for continuous operation
+    std::cout << "LLAMA Inference Integration Ready" << std::endl;
+    std::cout << "Echo Pattern Analysis Complete" << std::endl;
+    
+    // For demonstration, run for a limited time to avoid infinite loop in testing
+    // In production, this would run indefinitely
+    std::this_thread::sleep_for(std::chrono::seconds(2));
+    
+    // Coordinate with other engines (after initial setup)
+    orchestrator->coordinate_with_go_engine("initialize_hyper_echo");
+    orchestrator->interface_with_crystal_chatbot("greeting_protocol_activate");
+    
+    std::cout << "Orchestrator demonstration complete." << std::endl;
     
     return 0;
 }
