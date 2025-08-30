@@ -1,0 +1,22 @@
+name: crystal-echo
+version: 1.0.0
+description: Deep Tree Echo Crystal Lucky Chatbot Interface with real node-llama-cpp inference
+
+authors:
+  - Deep Tree Echo Team
+
+crystal: 1.9.2
+
+dependencies:
+  lucky:
+    github: luckyframework/lucky
+    version: ~> 1.0.0
+  uuid:
+    github: crystal-lang/crystal-uuid
+    version: ~> 1.0.0
+
+targets:
+  crystal-echo:
+    main: crystal-echo.cr
+
+license: MIT
