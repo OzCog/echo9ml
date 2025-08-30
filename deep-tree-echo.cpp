@@ -79,9 +79,9 @@ public:
     
     TreeNode(const std::string& content) : content(content) {}
     
-    void add_child(std::shared_ptr<TreeNode> child) {
+    void add_child(std::shared_ptr<TreeNode> child, std::shared_ptr<TreeNode> self) {
         children.push_back(child);
-        child->parent = std::weak_ptr<TreeNode>(child); // Use weak_ptr to avoid circular reference
+        child->parent = std::weak_ptr<TreeNode>(self); // Set parent to current node, not child
     }
 };
 
@@ -156,7 +156,7 @@ public:
         std::lock_guard<std::mutex> lock(tree_mutex);
         
         auto child = std::make_shared<TreeNode>(content);
-        parent->add_child(child);
+        parent->add_child(child, parent);  // Pass parent as second argument
         
         // Inherit and modify spatial context from parent
         derive_spatial_context(*child, *parent);
