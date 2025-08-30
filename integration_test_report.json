@@ -1,0 +1,52 @@
+{
+  "timestamp": 1756516705.6725857,
+  "tests_passed": 6,
+  "tests_total": 6,
+  "success_rate": 1.0,
+  "component_results": {
+    "cpp_orchestrator": {
+      "success": true,
+      "output_length": 1369,
+      "has_echo_propagation": true,
+      "has_llama_inference": true
+    },
+    "go_engine": {
+      "success": true,
+      "output_length": 0,
+      "has_workers": false,
+      "has_websocket": false,
+      "has_echo_propagation": false
+    },
+    "crystal_interface": {
+      "success": true,
+      "file_exists": true,
+      "file_size": 25102,
+      "has_lucky_framework": true,
+      "has_websocket": true,
+      "runtime_available": false
+    },
+    "python_integration": {
+      "success": true,
+      "output_length": 347,
+      "coordinates_components": true
+    },
+    "node_llama_integration": {
+      "success": true,
+      "directory_exists": true,
+      "cpp_files_count": 15,
+      "header_files_count": 15,
+      "key_files_found": [
+        "package.json",
+        "src/",
+        "llama/"
+      ]
+    },
+    "installation_script": {
+      "success": true,
+      "file_exists": true,
+      "file_size": 16841,
+      "has_multi_language_support": true
+    }
+  },
+  "overall_status": "PASS"
+}
