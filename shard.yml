@@ -1,6 +1,6 @@
 name: crystal-echo
 version: 1.0.0
-description: Deep Tree Echo Crystal Lucky Chatbot Interface with real node-llama-cpp inference
+description: Pure Crystal Deep Tree Echo Chatbot with Real LLM Integration (NO Python/JS corruption)
 
 authors:
   - Deep Tree Echo Team
@@ -8,18 +8,8 @@ authors:
 crystal: ">= 1.0.0"
 
 dependencies:
-  lucky:
-    github: luckyframework/lucky
-    version: ~> 1.0.0
-  uuid:
-    github: crystal-lang/crystal-uuid
-    version: ~> 1.0.0
-  json:
-    github: crystal-lang/crystal-json
-    version: ~> 0.1.0
-  http:
-    github: crystal-lang/crystal-http
-    version: ~> 0.1.0
+  # No external dependencies - pure Crystal standard library only
+  # This prevents any corruption from external packages
 
 development_dependencies:
   ameba:
@@ -29,10 +19,8 @@ development_dependencies:
 targets:
   crystal-echo:
     main: crystal-echo.cr
-  crystal-echo-server:
-    main: crystal_echo_server.cr
 
 scripts:
-  postinstall: "shards install"
+  # No postinstall scripts to prevent corruption
 
 license: MIT
