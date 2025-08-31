@@ -69,3 +69,16 @@ phase6_coverage.json
 # Cognitive Integration Workspace (exclude temporary files)
 # cognitive_workspace/
 # cognitive_logs/
+
+# Model files - exclude to avoid large commits
+models/
+*.gguf
+*.bin
+*.safetensors
+*.pth
+*.pt
+*.onnx
+
+# Verification reports (generated files)
+tiny_model_verification_report.json
+tiny_model_config.json
