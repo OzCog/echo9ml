@@ -1,0 +1,26 @@
+name: crystal-echo
+version: 1.0.0
+description: Pure Crystal Deep Tree Echo Chatbot with Real LLM Integration (NO Python/JS corruption)
+
+authors:
+  - Deep Tree Echo Team
+
+crystal: ">= 1.0.0"
+
+dependencies:
+  # No external dependencies - pure Crystal standard library only
+  # This prevents any corruption from external packages
+
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+    version: ~> 1.4.0
+
+targets:
+  crystal-echo:
+    main: crystal-echo.cr
+
+scripts:
+  # No postinstall scripts to prevent corruption
+
+license: MIT
