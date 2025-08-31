@@ -93,6 +93,28 @@ export const recommendedModels: ModelRecommendation[] = [{
         "hf:Qwen/Qwen3-0.6B-GGUF:Q8_0"
     ]
 }, {
+    name: "TinyLlama Stories 15M",
+    abilities: ["chat", "complete"],
+    description: "TinyLlama Stories 15M is an extremely small model (~15M parameters, ~15MB) designed for basic text generation and testing.\n" +
+        "This model was trained on children's stories and is perfect for testing, development, and resource-constrained environments.\n" +
+        "While its capabilities are limited, it's excellent as a fallback model and for demonstration purposes.\n" +
+        "This model is ideal for quick tests and ensuring your inference pipeline works correctly.",
+
+    fileOptions: [
+        "hf:ggml-org/models:tinyllamas/stories15M-q4_0.gguf"
+    ]
+}, {
+    name: "TinyLlama Stories 260K",
+    abilities: ["chat", "complete"],
+    description: "TinyLlama Stories 260K is an ultra-tiny model (~260K parameters, ~280KB) designed for basic text generation and testing.\n" +
+        "This model was trained on children's stories and is perfect for testing, development, and extremely resource-constrained environments.\n" +
+        "While its capabilities are very limited, it's excellent as a minimal fallback model and for demonstration purposes.\n" +
+        "This model is ideal for unit tests, CI/CD pipelines, and ensuring your inference pipeline works with minimal resource usage.",
+
+    fileOptions: [
+        "hf:ggml-org/models:tinyllamas/stories260K.gguf"
+    ]
+}, {
     name: "DeepSeek R1 Distill Qwen 7B",
     abilities: ["chat", "complete", "functionCalling", "reasoning"],
     description: "DeepSeek R1 model was created by DeepSeek and is using chain of though (CoT) to reason across a wide variety of topics.\n" +

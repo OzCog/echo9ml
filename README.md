@@ -102,6 +102,29 @@ Key features:
 
 Both dashboards maintain their own persistent logs to ensure diagnostic information is preserved even during system failures.
 
+## Tiny Model Setup
+
+Echo9ML now includes **TinyLlama models** for testing, development, and fallback scenarios:
+
+- **TinyLlama Stories 260K** (~280KB): Ultra-minimal model for CI/CD and basic testing
+- **TinyLlama Stories 15M** (~15MB): Small but capable model for demonstrations
+
+These models provide:
+- ⚡ Fast loading and inference
+- 🔧 Perfect for testing neural architectures without large model overhead  
+- 🛡️ Reliable fallback when larger models fail
+- 📦 Small enough to bundle with applications
+
+See [TINY_MODEL_SETUP.md](./TINY_MODEL_SETUP.md) for detailed documentation and usage examples.
+
+```bash
+# Quick test of tiny model integration
+python tiny_model_integration.py --test-mode
+
+# Run demo with stories15M model
+python tiny_model_integration.py --model stories15M --prompt "Tell me about AI"
+```
+
 ## Setup
 
 1. Install the required dependencies:
