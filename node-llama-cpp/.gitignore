@@ -20,7 +20,6 @@ node_modules
 /test-runner-profile
 
 /llama/compile_commands.json
-/llama/llama.cpp
 /llama/llama.cpp.lock
 /llama/llama.cpp.info.json
 /llama/lastBuild.json
