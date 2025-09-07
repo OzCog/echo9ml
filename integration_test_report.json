@@ -1,12 +1,12 @@
 {
-  "timestamp": 1756516705.6725857,
+  "timestamp": 1757286539.5352392,
   "tests_passed": 6,
   "tests_total": 6,
   "success_rate": 1.0,
   "component_results": {
     "cpp_orchestrator": {
       "success": true,
-      "output_length": 1369,
+      "output_length": 1522,
       "has_echo_propagation": true,
       "has_llama_inference": true
     },
@@ -20,7 +20,7 @@
     "crystal_interface": {
       "success": true,
       "file_exists": true,
-      "file_size": 25102,
+      "file_size": 49326,
       "has_lucky_framework": true,
       "has_websocket": true,
       "runtime_available": false
@@ -33,8 +33,8 @@
     "node_llama_integration": {
       "success": true,
       "directory_exists": true,
-      "cpp_files_count": 15,
-      "header_files_count": 15,
+      "cpp_files_count": 193,
+      "header_files_count": 117,
       "key_files_found": [
         "package.json",
         "src/",
@@ -44,7 +44,7 @@
     "installation_script": {
       "success": true,
       "file_exists": true,
-      "file_size": 16841,
+      "file_size": 17011,
       "has_multi_language_support": true
     }
   },
