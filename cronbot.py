@@ -40,11 +40,12 @@ def call_github_copilot(note):
     query = "This is a summary of last cycle events. Please can you help me take a look at the repo so we can identify an item for the next incremental improvement?"
     payload = {"note": note, "query": query}
     
-    # Write the payload to a local file
-    with open('.github/workflows/request_payload.json', 'w') as f:
+    # Write the payload to a local file in .github/data directory (not workflows)
+    os.makedirs('.github/data', exist_ok=True)
+    with open('.github/data/request_payload.json', 'w') as f:
         json.dump(payload, f)
     
-    logger.info("Payload written to .github/workflows/request_payload.json")
+    logger.info("Payload written to .github/data/request_payload.json")
     return {"improvement": "example_improvement", "assessment": "example_assessment"}
 
 def introspect_repo():
