@@ -166,7 +166,8 @@ class DeepTreeEchoLauncher:
                             line = go_process.stdout.readline()
                             if line and self.verbose:
                                 logger.debug("Go: %s", line.strip())
-                        except:
+                        except (IOError, OSError) as e:
+                            logger.debug("Error reading output: %s", e)
                             pass
                             
                 time.sleep(0.1)

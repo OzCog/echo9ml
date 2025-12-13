@@ -129,7 +129,8 @@ class DeepTreeEchoE2ETest:
             try:
                 response = requests.get("http://localhost:8080/status", timeout=2)
                 status_ok = response.status_code == 200
-            except:
+            except (requests.RequestException, ConnectionError) as e:
+                logger.debug("Connection check failed: %s", e)
                 status_ok = False
                 
             # Read some output

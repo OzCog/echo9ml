@@ -150,13 +150,15 @@ class DeepTreeEchoBenchmark:
         return result
         
     def benchmark_echo_propagation(self, iterations: int = 10) -> BenchmarkResult:
-        """Benchmark echo propagation speed"""
+        """Benchmark echo propagation speed (uses full execution time)"""
         logger.info("Benchmarking Echo Propagation (%d iterations)...", iterations)
         
         times = []
         failures = 0
         
         for i in range(iterations):
+            start = time.time()
+            
             try:
                 result = subprocess.run(
                     ["./deep-tree-echo"],
@@ -165,25 +167,22 @@ class DeepTreeEchoBenchmark:
                     timeout=30
                 )
                 
-                # Extract propagation time from output
-                propagation_time = 0.0
-                for line in result.stdout.split('\n'):
-                    if 'Echo Propagation' in line:
-                        # Estimate based on execution time
-                        propagation_time = 0.1  # placeholder
-                        break
-                        
+                elapsed = time.time() - start
+                
+                # Verify propagation occurred
+                if "Echo Propagation Complete" not in result.stdout:
+                    failures += 1
+                    
                 if result.returncode != 0:
                     failures += 1
-                    propagation_time = 1.0
                     
             except Exception as e:
                 logger.error("Iteration %d failed: %s", i, e)
                 failures += 1
-                propagation_time = 1.0
+                elapsed = 1.0
                 
-            times.append(propagation_time)
-            logger.info("  Iteration %d: %.3fs", i + 1, propagation_time)
+            times.append(elapsed)
+            logger.info("  Iteration %d: %.3fs", i + 1, elapsed)
             
         # Calculate statistics
         result = BenchmarkResult(

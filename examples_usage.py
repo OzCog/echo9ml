@@ -127,7 +127,8 @@ def example_3_integrated_workflow():
             try:
                 value = float(line.split('echo value:')[1].split()[0])
                 echo_values.append(value)
-            except:
+            except (ValueError, IndexError) as e:
+                logger.debug("Failed to parse echo value: %s", e)
                 pass
                 
     logger.info("  Extracted %d echo values: %.3f - %.3f",
