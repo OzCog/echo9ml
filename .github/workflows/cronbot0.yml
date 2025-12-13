@@ -50,6 +50,9 @@ jobs:
       - name: Run Copilot suggestions script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
         run: python copilot_suggestions.py
       - name: Stage generated artifacts
         run: |
@@ -67,7 +70,7 @@ jobs:
             echo "Invalid JSON structure in note2self.json" >&2
             exit 1
           fi
-          if [ -f .github/workflows/request_payload.json ] && ! jq empty .github/workflows/request_payload.json; then
+          if [ -f .github/data/request_payload.json ] && ! jq empty .github/data/request_payload.json; then
             echo "Invalid JSON structure in request_payload.json" >&2
             exit 1
           fi

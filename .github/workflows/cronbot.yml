@@ -46,6 +46,9 @@ jobs:
       - name: Run Copilot suggestions script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          AZURE_OPENAI_KEY: ${{ secrets.AZURE_OPENAI_KEY }}
+          AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
         run: python copilot_suggestions.py
 
       - name: Commit and push changes
@@ -54,7 +57,7 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git add note2self.json .github/workflows/request_payload.json
+          git add note2self.json .github/data/request_payload.json
           git commit -m 'Update configuration files' || \
             echo "No changes to commit"
           git push origin HEAD:main || echo "Push failed or no changes"

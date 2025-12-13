@@ -72,15 +72,16 @@ class TestGitHubTokenHandling(unittest.TestCase):
         
         with patch.dict(os.environ, {'GITHUB_TOKEN': test_token}):
             with patch('builtins.open', mock_open()) as mock_file:
-                result = cronbot.call_github_copilot(test_note)
-                
-                # Should return a result when token is set (even if it's a mock result)
-                self.assertIsNotNone(result)
-                self.assertIn("improvement", result)
-                self.assertIn("assessment", result)
-                
-                # Should attempt to write payload file
-                mock_file.assert_called_with('.github/workflows/request_payload.json', 'w')
+                with patch('os.makedirs'):
+                    result = cronbot.call_github_copilot(test_note)
+                    
+                    # Should return a result when token is set (even if it's a mock result)
+                    self.assertIsNotNone(result)
+                    self.assertIn("improvement", result)
+                    self.assertIn("assessment", result)
+                    
+                    # Should attempt to write payload file
+                    mock_file.assert_called_with('.github/data/request_payload.json', 'w')
     
     def test_copilot_suggestions_with_github_token(self):
         """Test that copilot_suggestions.py attempts to make request when GITHUB_TOKEN is set"""
