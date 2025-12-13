@@ -195,7 +195,7 @@ def example_4_pattern_analysis():
                 try:
                     value = float(line.split(':')[1].strip())
                     patterns[metric] = value
-                except:
+                except (ValueError, IndexError):
                     pass
                     
     logger.info("Pattern Analysis Results:")

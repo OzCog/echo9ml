@@ -20,6 +20,9 @@ from collections import deque
 
 from config_manager import DeepTreeEchoConfig
 
+# Module-level logger
+logger = logging.getLogger(__name__)
+
 
 @dataclass
 class SystemMetrics:

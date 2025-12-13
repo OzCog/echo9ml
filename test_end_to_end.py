@@ -200,7 +200,7 @@ class DeepTreeEchoE2ETest:
                     try:
                         value = float(line.split('echo value:')[1].split()[0])
                         echo_values.append(value)
-                    except:
+                    except (ValueError, IndexError):
                         pass
                         
             logger.info(f"  Extracted {len(echo_values)} echo values")
