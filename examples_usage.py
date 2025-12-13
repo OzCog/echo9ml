@@ -129,7 +129,6 @@ def example_3_integrated_workflow():
                 echo_values.append(value)
             except (ValueError, IndexError) as e:
                 logger.debug("Failed to parse echo value: %s", e)
-                pass
                 
     logger.info("  Extracted %d echo values: %.3f - %.3f",
                 len(echo_values), min(echo_values), max(echo_values))

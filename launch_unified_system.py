@@ -168,7 +168,6 @@ class DeepTreeEchoLauncher:
                                 logger.debug("Go: %s", line.strip())
                         except (IOError, OSError) as e:
                             logger.debug("Error reading output: %s", e)
-                            pass
                             
                 time.sleep(0.1)
                 

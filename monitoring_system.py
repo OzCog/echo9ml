@@ -89,7 +89,6 @@ class MetricsCollector:
                 memory_mb = process.memory_info().rss / 1024 / 1024
             except (psutil.NoSuchProcess, psutil.AccessDenied) as e:
                 logger.debug("Process %s not accessible: %s", pid, e)
-                pass
                 
         metrics = ComponentMetrics(
             name=name,
